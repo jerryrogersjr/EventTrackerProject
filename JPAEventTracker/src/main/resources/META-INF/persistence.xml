@@ -9,17 +9,17 @@
     </provider>
 
 		<!-- List entities here -->
-		<class>com.skilldistillery.jpavideostore.entities.Post</class>
+		<class>com.skilldistillery.jpaeventtracker.entities.Expense</class>
 
 		<properties>
 			<property name="javax.persistence.jdbc.url"
-				value="jdbc:mysql://localhost:3306/eventDB?useSSL=false&amp;useLegacyDatetimeCode=false&amp;serverTimezone=MST" />
+				value="jdbc:mysql://localhost:3306/expensedb?useSSL=false&amp;useLegacyDatetimeCode=false&amp;serverTimezone=MST" />
 				
 			<property name="javax.persistence.jdbc.url"
-				value="jdbc:mysql://localhost:3306/eventdb" />
-			<property name="javax.persistence.jdbc.user" value="event" />
+				value="jdbc:mysql://localhost:3306/expesedb" />
+			<property name="javax.persistence.jdbc.user" value="expenseUser" />
 			<property name="javax.persistence.jdbc.password"
-				value="event" />
+				value="expenseUser" />
 			<property name="javax.persistence.jdbc.driver"
 				value="com.mysql.jdbc.Driver" />
 
