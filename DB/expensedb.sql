@@ -46,13 +46,3 @@ GRANT SELECT, INSERT, TRIGGER, UPDATE, DELETE ON TABLE * TO 'expenseUser'@'local
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-
--- -----------------------------------------------------
--- Data for table `expense`
--- -----------------------------------------------------
-START TRANSACTION;
-USE `expensedb`;
-INSERT INTO `expense` (`id`, `expense_date`, `paid_to`, `expense_type`, `payment_type`, `workorder_num`, `expense_description`, `expense_total`, `created_at`, `updated_at`) VALUES (1, '2019-11-29', 'test', 'test', 'test', 123456789, 'test', 3.99, '2019-11-29', '2019-11-29');
-
-COMMIT;
-
