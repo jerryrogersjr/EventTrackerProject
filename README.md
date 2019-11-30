@@ -1,5 +1,8 @@
 # Event Tracker Project
 ## Expense Tracker
+*** NOTE: Currently no front end UI to view. This project was directed
+to work on RESTful services. I will build out the front end to experience
+the CRUD soon if we aren't using this project for follow on in class.
 
 ## Overview
 
