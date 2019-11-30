@@ -1,4 +1,4 @@
-package com.skilldistillery.eventtracker.entities;
+package com.skilldistillery.expensetracker.entities;
 
 import javax.persistence.Entity;
 

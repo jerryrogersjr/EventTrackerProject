@@ -4,19 +4,19 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 
-	<persistence-unit name="eventTracker">
+	<persistence-unit name="expenses">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider
     </provider>
 
 		<!-- List entities here -->
-		<class>com.skilldistillery.jpaeventtracker.entities.Expense</class>
+		<class>com.skilldistillery.jpaexpensetracker.entities.Expense</class>
 
 		<properties>
 			<property name="javax.persistence.jdbc.url"
 				value="jdbc:mysql://localhost:3306/expensedb?useSSL=false&amp;useLegacyDatetimeCode=false&amp;serverTimezone=MST" />
 				
 			<property name="javax.persistence.jdbc.url"
-				value="jdbc:mysql://localhost:3306/expesedb" />
+				value="jdbc:mysql://localhost:3306/expensedb" />
 			<property name="javax.persistence.jdbc.user" value="expenseUser" />
 			<property name="javax.persistence.jdbc.password"
 				value="expenseUser" />
