@@ -1,5 +1,5 @@
 # Event Tracker Project
-* Expense Tracker
+## Expense Tracker
 
 ## Overview
 
