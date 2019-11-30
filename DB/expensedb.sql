@@ -53,6 +53,8 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 START TRANSACTION;
 USE `expensedb`;
 INSERT INTO `expense` (`id`, `expense_date`, `paid_to`, `expense_type`, `payment_type`, `workorder_num`, `expense_description`, `expense_total`, `created_at`, `updated_at`) VALUES (1, '2019-11-29', 'Home Depot', 'Materials', 'CC', 123456789, 'Batteries for lights', 12.76, '2019-11-29', NULL);
+INSERT INTO `expense` (`id`, `expense_date`, `paid_to`, `expense_type`, `payment_type`, `workorder_num`, `expense_description`, `expense_total`, `created_at`, `updated_at`) VALUES (2, '2019-11-29', 'Lowes', 'Expendables', 'Cash', NULL, 'Stock Replacement: zip ties, tape, velcro', 37.98, '2019-11-29', NULL);
+INSERT INTO `expense` (`id`, `expense_date`, `paid_to`, `expense_type`, `payment_type`, `workorder_num`, `expense_description`, `expense_total`, `created_at`, `updated_at`) VALUES (3, '2019-11-29', 'Starbucks', 'Customer Appreciation', 'CC', NULL, 'Coffee for Jon at Wazzo ', 3.78, '2019-11-29', NULL);
 
 COMMIT;
 
