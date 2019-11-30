@@ -37,12 +37,22 @@ AUTO_INCREMENT = 2
 DEFAULT CHARACTER SET = utf8;
 
 SET SQL_MODE = '';
-DROP USER IF EXISTS expenseUser@localhost;
+DROP USER IF EXISTS expense@localhost;
 SET SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
-CREATE USER 'expenseUser'@'localhost' IDENTIFIED BY 'expenseUser';
+CREATE USER 'expense'@'localhost' IDENTIFIED BY 'expense';
 
-GRANT SELECT, INSERT, TRIGGER, UPDATE, DELETE ON TABLE * TO 'expenseUser'@'localhost';
+GRANT SELECT, INSERT, TRIGGER, UPDATE, DELETE ON TABLE * TO 'expense'@'localhost';
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+-- -----------------------------------------------------
+-- Data for table `expense`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `expensedb`;
+INSERT INTO `expense` (`id`, `expense_date`, `paid_to`, `expense_type`, `payment_type`, `workorder_num`, `expense_description`, `expense_total`, `created_at`, `updated_at`) VALUES (1, '2019-11-29', 'Home Depot', 'Materials', 'CC', 123456789, 'Batteries for lights', 12.76, '2019-11-29', NULL);
+
+COMMIT;
+
