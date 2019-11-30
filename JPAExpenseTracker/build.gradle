@@ -44,6 +44,9 @@ dependencies {
   compile "log4j:log4j:1.2.17"
   compile "org.hibernate:hibernate-core:$hibernateVersion"
   compile "org.hibernate:hibernate-c3p0:$hibernateVersion"
+  compile "mysql:mysql-connector-java:5.1.47"
+  compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.9.6'
+  compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.6'
   compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.9.7'
 
   
