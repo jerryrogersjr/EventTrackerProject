@@ -23,5 +23,7 @@ public class ExpenseController {
 	public List<Expense> index(){
 		return svc.allExpenses();
 	}
+	
+	
 
 }

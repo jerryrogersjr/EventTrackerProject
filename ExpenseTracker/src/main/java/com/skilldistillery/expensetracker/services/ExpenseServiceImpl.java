@@ -1,6 +1,7 @@
 package com.skilldistillery.expensetracker.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -19,14 +20,17 @@ public class ExpenseServiceImpl implements ExpenseService {
 
 	@Override
 	public List<Expense> allExpenses() {
-		// TODO Auto-generated method stub
-		return null;
+		return repo.findAll();
 	}
 
 	@Override
 	public Expense findExpenseById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Expense exp = null;
+		Optional<Expense> opt = repo.findById(id);
+		if (opt.isPresent()) {
+			exp = opt.get();
+		}
+		return exp;
 	}
 
 	@Override
