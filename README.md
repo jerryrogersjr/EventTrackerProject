@@ -44,10 +44,9 @@ updated, or deleted.
 * Spring Boot
 * RESTful
 * JSON
-* Postman
 * MySQL Workbench
 * Atom
-
+* Postman
 ```[
     {
         "id": 1,
