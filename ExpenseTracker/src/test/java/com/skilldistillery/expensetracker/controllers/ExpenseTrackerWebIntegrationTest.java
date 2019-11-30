@@ -42,6 +42,6 @@ public class ExpenseTrackerWebIntegrationTest {
     List<Expense> exp = mapper.readValue(response.getBody(),  mapper.getTypeFactory().constructCollectionType(List.class, Expense.class));
 
     assertThat( responseJson.isMissingNode(), is(false));
-    assertThat( exp.get(0).getDescription(), is("test"));
+    assertThat( exp.get(0).getDescription(), is("Batteries for lights"));
   }
 }

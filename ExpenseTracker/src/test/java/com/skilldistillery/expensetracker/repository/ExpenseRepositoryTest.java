@@ -30,7 +30,7 @@ class ExpenseRepositoryTest {
 
 		if (opt.isPresent()) {
 			Expense exp = opt.get();
-			assertEquals("test", exp.getDescription());
+			assertEquals("Batteries for lights", exp.getDescription());
 		}
 	}
 	

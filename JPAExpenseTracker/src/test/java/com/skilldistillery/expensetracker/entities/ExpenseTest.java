@@ -43,7 +43,7 @@ class ExpenseTest {
 	@Test
 	void test() {
 		assertNotNull(exp);
-		assertEquals("test", exp.getExpenseType());
+		assertEquals("Materials", exp.getExpenseType());
 	}
 
 }
