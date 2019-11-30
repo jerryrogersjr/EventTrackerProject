@@ -9,6 +9,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 @Entity
 public class Expense {
 
@@ -38,9 +41,11 @@ public class Expense {
 	private double expenseTotal;
 
 	@Column(name = "created_at")
+	@CreationTimestamp
 	private Date createdAt;
 
 	@Column(name = "updated_at")
+	@UpdateTimestamp
 	private Date updatedAt;
 
 	public Expense() {

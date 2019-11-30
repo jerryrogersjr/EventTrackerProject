@@ -1,7 +1,10 @@
 package com.skilldistillery.expensetracker.repository;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.junit.jupiter.api.Test;
@@ -29,6 +32,13 @@ class ExpenseRepositoryTest {
 			Expense exp = opt.get();
 			assertEquals("test", exp.getDescription());
 		}
+	}
+	
+	@Test
+	void test2() {
+		List<Expense> exp = repo.findAll();
+		assertNotNull(exp);
+		assertTrue(exp.size() > 0);
 	}
 
 }

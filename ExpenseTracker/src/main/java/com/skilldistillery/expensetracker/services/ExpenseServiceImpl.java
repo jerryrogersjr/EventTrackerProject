@@ -14,7 +14,7 @@ import com.skilldistillery.expensetracker.repositories.ExpenseRepository;
 @Service
 @Transactional
 public class ExpenseServiceImpl implements ExpenseService {
-	
+
 	@Autowired
 	private ExpenseRepository repo;
 
@@ -35,20 +35,35 @@ public class ExpenseServiceImpl implements ExpenseService {
 
 	@Override
 	public Expense createExpense(Expense expense) {
-		// TODO Auto-generated method stub
-		return null;
+		return repo.saveAndFlush(expense);
 	}
 
 	@Override
-	public Expense updateExpense(int id, Expense expense) {
-		// TODO Auto-generated method stub
-		return null;
+	public Expense updateExpense(int expId, Expense updatedExpense) {
+		Expense exp = null;
+		Optional<Expense> opt = repo.findById(expId);
+		if (opt.isPresent()) {
+			exp = opt.get();
+			exp.setExpenseDate(updatedExpense.getExpenseDate());
+			exp.setPaidToName(updatedExpense.getPaidToName());
+			exp.setExpenseType(updatedExpense.getExpenseType());
+			exp.setPaymentType(updatedExpense.getPaymentType());
+			exp.setWorkorderNumber(updatedExpense.getWorkorderNumber());
+			exp.setDescription(updatedExpense.getDescription());
+			exp.setExpenseTotal(updatedExpense.getExpenseTotal());
+			repo.saveAndFlush(exp);
+		}
+		return exp;
 	}
 
 	@Override
 	public boolean deleteExpense(int id) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean deleted = false;
+		if (repo.existsById(id)) {
+			repo.deleteById(id);
+			deleted = true;
+		}
+		return deleted;
 	}
 
 }
