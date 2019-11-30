@@ -17,9 +17,9 @@
 				
 			<property name="javax.persistence.jdbc.url"
 				value="jdbc:mysql://localhost:3306/expensedb" />
-			<property name="javax.persistence.jdbc.user" value="expenseUser" />
+			<property name="javax.persistence.jdbc.user" value="expense" />
 			<property name="javax.persistence.jdbc.password"
-				value="expenseUser" />
+				value="expense" />
 			<property name="javax.persistence.jdbc.driver"
 				value="com.mysql.jdbc.Driver" />
 
