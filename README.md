@@ -19,7 +19,7 @@ updated, or deleted.
 * Use Spring Data JPA to perform all CRUD operations.
 * Send and receive JSON.
 
-![Image description](ExpenseTracker/src/main/resources/public/images/Basic%20CRUD%20Interface.png)
+![Image](ExpenseTracker/src/main/resources/public/images/Basic%20CRUD%20Interface.png)
 
 ### Project Requirements
 
