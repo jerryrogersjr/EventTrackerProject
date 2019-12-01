@@ -1,6 +1,6 @@
 # Event Tracker Project
 ## Expense Tracker
-*** NOTE: Currently no front end UI to view. This project was directed
+** NOTE: Currently no front end UI to view. This project was directed
 to work on RESTful services. I will build out the front end to experience
 the CRUD soon if we aren't using this project for follow on in class.
 
@@ -36,6 +36,12 @@ updated, or deleted.
 6. Create a Spring Boot project for the REST API controller(s), service, and Spring Data JPA repository.
 7. Create controller logic to perform the basic CRUD operations of a REST API.
 8. Test these routes using Postman
+
+```Get	api/expenses	Get a List of Expenses
+Get	api/expenses/{id}	Get expense by ID
+Post	api/expenses	Create New Expense
+Post	api/expenses/{id}	Update/Edit Expense by ID
+Delete	api/expenses/{id}	Delete Expense by ID```
 
 ### Technologies Used
 
