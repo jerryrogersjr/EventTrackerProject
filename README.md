@@ -24,16 +24,16 @@ updated, or deleted.
 
 ### Project Requirements
 
-1. Create a new STS workspace for the project.
-2. Initialize the workspace with git.
-3. Associate the workspace with a Github repo named EventTrackerProject.
-4. Use MySQL Workbench to create a database schema with a single table.
+- [x] Create a new STS workspace for the project.
+- [x] Initialize the workspace with git.
+- [x] Associate the workspace with a Github repo named EventTrackerProject.
+- [x] Use MySQL Workbench to create a database schema with a single table.
 - Create a appusername@localhost account with a password for your database.
 - Include some initial sample data.
-5. Create a Gradle Project for the JPA entity and tests.
-6. Create a Spring Boot project for the REST API controller(s), service, and Spring Data JPA repository.
-7. Create controller logic to perform the basic CRUD operations of a REST API.
-8. Test these routes using Postman
+- [x] Create a Gradle Project for the JPA entity and tests.
+- [x] Create a Spring Boot project for the REST API controller(s), service, and Spring Data JPA repository.
+- [x] Create controller logic to perform the basic CRUD operations of a REST API.
+- [x] Test these routes using Postman
 ```java
 public interface ExpenseRepository extends JpaRepository<Expense, Integer>
 ```
