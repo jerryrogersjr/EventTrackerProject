@@ -45,19 +45,6 @@ public interface ExpenseRepository extends JpaRepository<Expense, Integer>
 | Expense       | POST api/expenses/{id} | Updates one expense by ID   |
 | Boolean       | DELETE api/expenses/{id} | Deletes one expense by ID |
 
-### Technologies Used
-
-* Java
-* JPA
-* Gradle
-* Hibernate
-* Tomcat/Apache
-* Spring Boot
-* RESTful
-* JSON
-* MySQL Workbench
-* Atom
-* Postman
 ```json
     {
         "id": 1,
@@ -96,6 +83,20 @@ public interface ExpenseRepository extends JpaRepository<Expense, Integer>
         "updatedAt": "2019-11-29T07:00:00.000+0000"
     }
 ```
+### Technologies Used
+
+* Java
+* JPA
+* Gradle
+* Hibernate
+* Tomcat
+* Apache
+* Spring Boot
+* RESTful
+* JSON
+* MySQL Workbench
+* Atom
+* Postman
 
 * MacBook Pro
 * Ninja
