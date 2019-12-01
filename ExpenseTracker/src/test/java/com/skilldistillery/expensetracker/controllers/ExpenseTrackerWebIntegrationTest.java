@@ -23,7 +23,7 @@ import com.skilldistillery.expensetracker.entities.Expense;
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment=WebEnvironment.DEFINED_PORT)
 public class ExpenseTrackerWebIntegrationTest {
-  private String baseUrl = "http://localhost:8088/";
+  private String baseUrl = "http://localhost:8087/";
 
   @Test
   public void testAllExpenses() throws IOException{
