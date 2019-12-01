@@ -37,7 +37,7 @@ updated, or deleted.
 7. Create controller logic to perform the basic CRUD operations of a REST API.
 8. Test these routes using Postman
 
-[get/post table](ExpenseTracker/src/main/resources/public/images/getposttable.png)
+![get post table](ExpenseTracker/src/main/resources/public/images/getposttable.png)
 
 ### Technologies Used
 
@@ -52,7 +52,7 @@ updated, or deleted.
 * MySQL Workbench
 * Atom
 * Postman
-```[
+```
     {
         "id": 1,
         "expenseDate": "2019-11-29T07:00:00.000+0000",
@@ -89,7 +89,7 @@ updated, or deleted.
         "createdAt": "2019-11-29T07:00:00.000+0000",
         "updatedAt": "2019-11-29T07:00:00.000+0000"
     }
-]```
+```
 
 * MacBook Pro
 * Ninja
