@@ -34,7 +34,7 @@ updated, or deleted.
 6. Create a Spring Boot project for the REST API controller(s), service, and Spring Data JPA repository.
 7. Create controller logic to perform the basic CRUD operations of a REST API.
 8. Test these routes using Postman
-```
+```linux
 public interface ExpenseRepository extends JpaRepository<Expense, Integer>
 ```
 | Return Type   | Route                  | Functionality               |
@@ -58,7 +58,7 @@ public interface ExpenseRepository extends JpaRepository<Expense, Integer>
 * MySQL Workbench
 * Atom
 * Postman
-```json 
+```json
     {
         "id": 1,
         "expenseDate": "2019-11-29T07:00:00.000+0000",
