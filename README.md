@@ -28,8 +28,8 @@ updated, or deleted.
 - [x] Initialize the workspace with git.
 - [x] Associate the workspace with a Github repo named EventTrackerProject.
 - [x] Use MySQL Workbench to create a database schema with a single table.
-i.  Create a appusername@localhost account with a password for your database.
-ii. Include some initial sample data.
+  * Create a appusername@localhost account with a password for your database.
+  * Include some initial sample data.
 - [x] Create a Gradle Project for the JPA entity and tests.
 - [x] Create a Spring Boot project for the REST API controller(s), service, and Spring Data JPA repository.
 - [x] Create controller logic to perform the basic CRUD operations of a REST API.
