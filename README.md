@@ -37,11 +37,11 @@ updated, or deleted.
 7. Create controller logic to perform the basic CRUD operations of a REST API.
 8. Test these routes using Postman
 ```
-Get	    api/expenses	    Get a List of Expenses
-Get	    api/expenses/{id}	Get expense by ID
-Post	  api/expenses	    Create New Expense
-Post	  api/expenses/{id}	Update/Edit Expense by ID
-Delete	api/expenses/{id}	Delete Expense by ID
+Get	 api/expenses	    Get a List of Expenses
+Get  api/expenses/{id}	Get expense by ID
+Post	 api/expenses	    Create New Expense
+Post	 api/expenses/{id}	Update/Edit Expense by ID
+Delete	 api/expenses/{id}	Delete Expense by ID
 ```
 
 ### Technologies Used
