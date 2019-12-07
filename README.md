@@ -35,7 +35,8 @@ updated, or deleted.
 - [x] Create controller logic to perform the basic CRUD operations of a REST API.
 - [x] Test these routes using Postman
 ```java
-public interface ExpenseRepository extends JpaRepository<Expense, Integer>
+public interface ExpenseRepository extends JpaRepository<Expense, Integer>```
+```
 ```
 | Return Type   | Route                  | Functionality               |
 | ------------- | ---------------------- | --------------------------- |
@@ -44,7 +45,7 @@ public interface ExpenseRepository extends JpaRepository<Expense, Integer>
 | Expense       | POST api/expenses      | Creates new expense         |
 | Expense       | POST api/expenses/{id} | Updates one expense by ID   |
 | Boolean       | DELETE api/expenses/{id} | Deletes one expense by ID |
-
+```
 ```json
     {
         "id": 1,
