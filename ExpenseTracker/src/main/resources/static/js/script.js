@@ -15,6 +15,12 @@ function init() {
 		event.preventDefault();
 		addNewExpense();
 	});
+// document.deleteExpenseForm.deleteButton.addEventListener('click',
+// function(event){
+// event.preventDefault();
+// deleteExpense();
+// });
+	
 	// document.updateExpenseForm.update.addEventListener('click',
 	// function(event) {
 	// event.preventDefault();
@@ -22,9 +28,14 @@ function init() {
 	// });
 }
 
-// get list of expenses
+// ********** GET LIST of expenses **********
 
-// get expense by id
+funtion listExpenses() {
+	// iterate expenses by name and amount here.
+}
+
+// ********** GET expense BY ID ************
+
 function getExpense(expenseId) {
 
 	var xhr = new XMLHttpRequest();
@@ -45,7 +56,9 @@ function getExpense(expenseId) {
 
 	xhr.send(null);
 }
-// add expense
+
+// ********** ADD expense *************
+
 function addNewExpense() {
 
 	var xhr = new XMLHttpRequest();
@@ -84,7 +97,8 @@ function addNewExpense() {
 	xhr.send(newExpenseJsonString);
 }
 
-// update expense
+// ********* UPDATE expense **********
+
 // function updateExpense(expenseId) {
 //	
 // var xhr = new XMLHttpRequest();
@@ -123,9 +137,39 @@ function addNewExpense() {
 //	
 // }
 
-// delete expense
+// ********** delete expense ***********
 
-// display expense
+function deleteExpense(expenseId) {
+
+	var xhr = new XMLHttpRequest();
+	xhr.open('DELETE', 'http://localhost:8087/api/expenses/' + this.expenseId,
+			true);
+	xhr.setRequestHeader("Content-type", "application/json");
+
+	xhr.onreadystatechange = function() {
+
+		if (xhr.readyState === 4 && xhr.status < 400) {
+			// var expenseObject = JSON.parse(xhr.responseText);
+			// displayExpense(expenseObject);
+			if (this.expenseId === null) {
+				let deleted = this.expenseId;
+				deleted.textContent = this.expenseId + ' successfully deleted';
+			}
+			console.log('delete success');
+
+		}
+
+		if (xhr.readyState === 4 && xhr.status >= 400) {
+			console.error(xhr.status + ': ' + xhr.responseText);
+			var dataDiv = document.getElementById('expenseData');
+			dataDiv.textContent = 'Error Deleting Expense';
+		}
+	};
+	xhr.send(null);
+}
+
+// ******** DISPLAY expense ************
+
 function displayExpense(expense) {
 
 	var dataDiv = document.getElementById('expenseData');
@@ -139,12 +183,17 @@ function displayExpense(expense) {
 	dataDiv.appendChild(expH3);
 	expH3.textContent = expense.paidToName;
 
-	let expBtn = document.createElement('button');
-	dataDiv.appendChild(expBtn);
-	expBtn.textContent = "Update";
-	expBtn.value = 'update';
-	expBtn.name = 'update';
-	expBtn.update = 'update';
+	let updateBtn = document.createElement('input');
+	dataDiv.appendChild(updateBtn);
+	updateBtn.type = 'submit';
+	updateBtn.value = 'Update';
+	updateBtn.name = 'updateButton';
+
+	let deleteBtn = document.createElement('input');
+	dataDiv.appendChild(deleteBtn);
+	deleteBtn.type = 'submit';
+	deleteBtn.value = 'Delete';
+	deleteBtn.name = 'deleteButton';
 
 	let hr = document.createElement('hr');
 	dataDiv.appendChild(hr);
