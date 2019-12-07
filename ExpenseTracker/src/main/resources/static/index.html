@@ -1,11 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script type="text/javascript" src="script.js"></script>
+<script src="bootstrap/jquery-3.3.1.min.js"></script>
+<!-- Bootstrap order: jquery, popper, js -->
+<script src="bootstrap/popper.min.js"></script>
+<script src="bootstrap/bootstrap-4.3.1.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
 <meta charset="UTF-8">
-<title>Event Tracker</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="bootstrap/bootstrap-4.3.1.css">
+<title>Expenses</title>
 </head>
 <body>
-<h1>Event Tracker</h1>
+	<div class="container jumbotron">
+		<form name="expenseForm">
+			<input class="form-control" type="number" name="expenseId">
+			<button name="lookup">Expense by Id</button>
+		</form>
+		<hr>
+		<div id="output">
+         <div id="expenseData">
+         </div>
+      </div>
+		
+		<form name="addExpenseForm">
+         <input class="form-control" type="date" name="expenseDate" placeholder="expense date" />
+         <input class="form-control" type="text" name="paidToName" placeholder="expense paid to name (ex.Home Depot)" />
+         <input class="form-control" type="text" name="expenseType" placeholder="expense type/category" />
+         <input class="form-control" type="text" name="paymentType" placeholder="payment type (ex.Cash or CC)" />
+         <input class="form-control" type="number" name="workorderNumber" placeholder="work order number" />
+         <input class="form-control" type="text" name="description" placeholder="expense description" />
+         <input class="form-control" type="number" name="expenseTotal" placeholder="expense total amount" />
+         <button name="create"> Create </button>
+      </form>
+	</div>
+	
 </body>
 </html>
