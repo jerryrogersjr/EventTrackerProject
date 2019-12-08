@@ -9,31 +9,43 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="bootstrap/bootstrap-4.3.1.css">
 <link rel="stylesheet" href="css/custom.css">
+<link rel="stylesheet" href="bootstrap/bootstrap-4.3.1.css">
 <title>Expenses</title>
 </head>
 <body>
-	<div class="container jumbotron">
-		<div id="output">
+	<div>
+		<br>
+		<h1 class="font-weight-light" align="center">Keep track of Your
+			Expenses</h1>
+		<br>
+	</div>
+	<br>
+	<div class="container bg-success rounded shadow">
+		<br>
+		<div class="card-body bg-light shadow rounded" id="output">
 			<div id="expenseData">
 				<form name="deleteExpenseForm"></form>
 			</div>
 			<div id="expenseData">
 				<form name="updateExpenseForm"></form>
 			</div>
-			<!-- <div id="expenseData">
-			<table name="listExpenseForm"></table>
-			</div> -->
 		</div>
-		<hr>
-		<form name="expenseForm">
+		<br>
+		<form class="card-body bg-light rounded" name="expenseForm">
+			<h3 class="font-weight-light">Search Expense by Id</h3>
 			<input class="form-control" type="number" name="expenseId"
-				placeholder="Enter Expense Id" /><br> <input type="submit"
-				name="lookup" value="Find By Id" />
+				placeholder="Enter Expense Id" /><br> 
+				<input
+				class="btn btn-outline-primary" onclick="scrollOnClick()" type="submit" name="lookup"
+				value="Find By Id" />
+				<input
+				class="btn btn-outline-primary" onclick="scrollOnClick()" type="submit" name="listBtn"
+				value="Search List" />
 		</form>
 		<br>
-		<form name="addExpenseForm">
+		<form class="card-body bg-light rounded" name="addExpenseForm">
+			<h3 class="font-weight-light">Add New Expense</h3>
 			<input class="form-control" type="date" name="expenseDate"
 				placeholder="expense date" /> <input class="form-control"
 				type="text" name="paidToName"
@@ -47,9 +59,12 @@
 				type="text" name="description" placeholder="expense description" />
 			<input class="form-control" type="number" name="expenseTotal"
 				placeholder="expense total amount" /><br>
-			<button name="create">Create</button>
+			<button class="btn btn-outline-primary" onclick="scrollOnClick()" name="create">Create</button>
 		</form>
+		<br>
 	</div>
-	<div></div>
+	<footer>
+		<br>
+	</footer>
 </body>
 </html>
