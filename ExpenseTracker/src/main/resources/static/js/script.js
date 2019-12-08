@@ -1,7 +1,7 @@
 window.addEventListener('load', function(e) {
 	console.log('Loaded');
 	init();
-	displayExpenseList();
+	getExpenses();
 });
 
 function init() {
@@ -16,7 +16,7 @@ function init() {
 		event.preventDefault();
 		addNewExpense();
 	});
-//	document.listExpenseForm.list.addEventListener('click', function(event) {
+//	document.listExpenseForm.list.addEventListener('load', function(event) {
 //		event.preventDefault();
 //		getExpenseList();
 //	});
@@ -24,22 +24,23 @@ function init() {
 
 // ********** GET LIST of expenses **********
 
-function getExpenseList() {
+function getExpenses() {
 	console.log('get list');
+	
 	var xhr = new XMLHttpRequest();
-	xhr.open('GET', 'http://localhost:8087/api/expenses/', true);
+	xhr.open('GET', 'http://localhost:8087/api/expenses', true);
 
 	xhr.onreadystatechange = function() {
 
-		
+		console.log('in list on ready')
 		if (xhr.readyState === 4 && xhr.status < 400) {
-			var expenses = JSON.parse(xhr.responseText);
-			displayExpenseList(expenses);
+			var expenses = JSON.parse(xhr.response);
+			displayExpenses(expenses);
 			console.log(expenses);
 		}
 
 		if (xhr.readyState === 4 && xhr.status >= 400) {
-			console.error(xhr.status + ': ' + xhr.responseText);
+			console.error(xhr.status + ': ' + xhr.response);
 			var dataDiv = document.getElementById('expenseData');
 			dataDiv.textContent = 'Expenses Not Found';
 		}
@@ -50,75 +51,55 @@ function getExpenseList() {
 
 // ********** DISPLAY LIST ****************
 
-function displayExpenseList(expenses) {
-
+function displayExpenses(expenses) {
+	
+	console.log('in displayExpenses')
+	
 	let dataDiv = document.getElementById('expenseData');
 	dataDiv.textContent = '';
 	
-	let listH3 = document.createElement('h3');
-	dataDiv.appendChild(listH3);
-	listH3.textContent = 'List of Expenses';
-	
 	let table = document.createElement('table');
-	
-	for (let i = 0; i < expenses.length; i++){
-		
-		let tblRow = document.createElement('tr');
-		table.appendChild(tblRow);
-		
-		let tblH1 = document.createElement('th');
-		tblRow.appendChild(tblH1);
-		tblH1.textContent = 'Expense Date';
-				
-		let tblH2 = document.createElement('th');
-		tblRow.appendChild(tblH2);
-		tblH2.textContent = 'Expended At';
-		
-		let tblH3 = document.createElement('th');
-		tblRow.appendChild(tblH3);
-		tblH3.textContent = 'Expense Amount';
-		
-		let tblRows = document.createElement('tr');
-		table.appendChild(tblRows);
-		
-		let td1 = document.createElement('td');
-		tblRows.appendChild(td1);
-		td1.textContent = expenses[i].expenseDate;
-		
-		let td2 = document.createElement('td');
-		tblRows.appendChild(td2);
-		td2.textContent = expenses[i].paidToName;
-		
-		let td3 = document.createElement('td');
-		tblRows.appendChild(td3);
-		td3.textContent = expenses[i].expenseTotal;
-		
-		
-		
-	}
 	dataDiv.appendChild(table);
+	let tRow = document.createElement('tr');
+	
+	let th = document.createElement('th');
+	th.textContent = 'Id';
+	tRow.appendChild(th);
+	
+	let th2 = document.createElement('th');
+	th2.textContent = 'Name';
+	tRow.appendChild(th2);
+	
+	table.appendChild(tRow);
+	
+	expenses.forEach(function(expense, index) {
+		let tr = document.createElement('tr');
+		
+		let td = document.createElement('td');
+
+		td.textContent = expense.id;
+		tr.appendChild(td);
+
+		td = document.createElement('td');
+		
+		td.textContent = expense.paidToName;
+		tr.appendChild(td);
+
+		table.appendChild(tr);
+
+		tr.addEventListener('click', function(e) {
+			getExpense(expense.id);
+		});
+	});
 }
 
-//let table = document.createElement('table')
-//for (i = 0; usStates.length; i++) {
-//  let tableRow = document.createElement('tr');
-//  document.body.appendChild(tableRow);
-
-//  let tableData1 = document.createElement('td');
-//  let tableData2 = document.createElement('td');
-//  tableData1.textContent = usStates[i].name;
-//  tableData2.textContent = usStates[i].abbr;
-//document.body.appendChild(tableData1);
-//  document.body.appendChild(tableData2);
-//}
-//document.body.appendChild(table);
 
 // ********** GET expense BY ID ************
 
 function getExpense(expenseId) {
 
 	var xhr = new XMLHttpRequest();
-	xhr.open('GET', 'http://localhost:8087/api/expenses/' + expenseId, true);
+	xhr.open('GET', 'api/expenses/' + expenseId, true);
 
 	xhr.onreadystatechange = function() {
 
