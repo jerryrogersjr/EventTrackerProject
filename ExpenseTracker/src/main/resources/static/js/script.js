@@ -58,31 +58,40 @@ function displayExpenses(expenses) {
 	let dataDiv = document.getElementById('expenseData');
 	dataDiv.textContent = '';
 	
+	
 	let table = document.createElement('table');
 	dataDiv.appendChild(table);
-	let tRow = document.createElement('tr');
+	table.className = 'table';
+	
+	let tr = document.createElement('tr');
 	
 	let th = document.createElement('th');
 	th.textContent = 'Id';
-	tRow.appendChild(th);
+	tr.appendChild(th);
 	
-	let th2 = document.createElement('th');
-	th2.textContent = 'Name';
-	tRow.appendChild(th2);
+	th = document.createElement('th');
+	th.textContent = 'Name';
+	tr.appendChild(th);
 	
-	table.appendChild(tRow);
+	th = document.createElement('th');
+	th.textContent = 'Amount';
+	tr.appendChild(th);
+	
+	table.appendChild(tr);
 	
 	expenses.forEach(function(expense, index) {
 		let tr = document.createElement('tr');
 		
 		let td = document.createElement('td');
-
 		td.textContent = expense.id;
 		tr.appendChild(td);
 
 		td = document.createElement('td');
-		
 		td.textContent = expense.paidToName;
+		tr.appendChild(td);
+		
+		td = document.createElement('td');
+		td.textContent = expense.expenseTotal;
 		tr.appendChild(td);
 
 		table.appendChild(tr);
