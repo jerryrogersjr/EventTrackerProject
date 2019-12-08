@@ -177,7 +177,7 @@ function addNewExpense() {
 
 // ********* UPDATE expense **********
 
-function updateExpense(expense) {
+function updateExpense(expenseId) {
 
 	var xhr = new XMLHttpRequest();
 	xhr.open('POST', 'http://localhost:8087/api/expenses/' + expenseId, true);
@@ -197,7 +197,20 @@ function updateExpense(expense) {
 		}
 	};
 
-	xhr.send(expense);
+	let form = document.showUpdateForm;
+	var updatedExpenseObject = {
+		expenseDate : form.expense.expenseDate.value,
+		paidToName : form.paidToName.value,
+		expenseType : form.expenseType.value,
+		paymentType : form.paymentType.value,
+		workorderNumber : form.workorderNumber.value,
+		description : form.description.value,
+		expenseTotal : form.expenseTotal.value
+	};
+
+	var updatedExpenseJsonString = JSON.stringify(updatedExpenseObject);
+
+	xhr.send(updatedExpenseJsonString);
 }
 
 // ********* UPDATE FORM **********
@@ -205,20 +218,102 @@ function updateExpense(expense) {
 function showUpdateForm(expense) {
 
 	var dataDiv = document.getElementById('expenseData');
+	dataDiv.textContent = '';
+	
+	let h3 = document.createElement('h3');
+	h3.textContent = ("Update Expense (" + expense.id + ") for " + expense.paidToName);
+	h3.className = "font-weight-light";
+	dataDiv.appendChild(h3);
+	
 
-	let updH1 = document.getElementById('h3');
-	dataDiv.appendChild(updH1);
-	updH1.textContent = "Make changes to Expense";
-
-	let updForm = document.getElementById('form');
-
-	let updDate = document.getElementById('input');
-	updForm.appendChild(updDate);
-	updDate.value = expense.expenseDate.value;
-	updDate.type = "text";
-
-	dataDiv.appendChild(updForm);
-
+	let updateForm = document.createElement('form');
+	
+	
+	let br = document.createElement('br');
+	updateForm.appendChild(br);
+	
+	let input = document.createElement('input');
+	
+	input.className = 'form-control';
+	input.type = 'date';
+	input.name = 'expenseDate';
+	input.value = expense.expenseDate.value;
+	updateForm.appendChild(input);
+	
+	br = document.createElement('br');
+	updateForm.appendChild(br);
+	
+	input = document.createElement('input');
+	input.className = 'form-control';
+	input.type = 'text';
+	input.name = 'paidToName';
+	input.value = expense.paidToName.value;
+	updateForm.appendChild(input);
+	br = document.createElement('br');
+	updateForm.appendChild(br);
+	
+	input = document.createElement('input');
+	input.className = 'form-control';
+	input.type = 'text';
+	input.name = 'expenseType';
+	input.value = expense.expenseType.value;
+	updateForm.appendChild(input);
+	
+	br = document.createElement('br');
+	updateForm.appendChild(br);
+	
+	input = document.createElement('input');
+	input.className = 'form-control';
+	input.type = 'text';
+	input.name = 'paymentType';
+	input.value = expense.paymentType.value;
+	updateForm.appendChild(input);
+	
+	br = document.createElement('br');
+	updateForm.appendChild(br);
+	
+	input = document.createElement('input');
+	input.className = 'form-control';
+	input.type = 'number';
+	input.name = 'workorderNumber';
+	input.value = expense.workorderNumber.value;
+	updateForm.appendChild(input);
+	
+	br = document.createElement('br');
+	updateForm.appendChild(br);
+	
+	input = document.createElement('input');
+	input.className = 'form-control';
+	input.type = 'text';
+	input.name = 'description';
+	input.value = expense.description.value;
+	updateForm.appendChild(input);
+	
+	br = document.createElement('br');
+	updateForm.appendChild(br);
+	
+	input = document.createElement('input');
+	input.className = 'form-control';
+	input.type = 'number';
+	input.name = 'expenseTotal';
+	input.value = expense.expenseTotal.value;
+	updateForm.appendChild(input);
+	
+	dataDiv.appendChild(updateForm);
+	
+	br = document.createElement('br');
+	updateForm.appendChild(br);
+	
+	let button = document.createElement('button');
+	button.innerHTML = "Update Expense";
+	dataDiv.appendChild(button);
+	button.className = 'btn btn-outline-primary';
+	
+	button.addEventListener('click', function(e) {
+		e.preventDefault();
+		updateExpense(expense);
+	});
+	
 }
 
 // ********** delete expense ***********

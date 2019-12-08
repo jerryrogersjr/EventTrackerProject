@@ -1,29 +1,38 @@
 @charset "UTF-8";
 
 ul.a {
-  list-style-type: circle;
+	list-style-type: circle;
 }
 
 ul.b {
-  list-style-type: square;
+	list-style-type: square;
 }
 
 ol.c {
-  list-style-type: upper-roman;
+	list-style-type: upper-roman;
 }
 
 ol.d {
-  list-style-type: lower-alpha;
+	list-style-type: lower-alpha;
 }
 
-body{
-    background-color: #32CD32 !important;
+body {
+	background-color: #32CD32 !important;
+}
+
+.hd-main {
+	background-color: #1b5e20 !important;
 }
 
 .solid-sticky {
-  background-color: #a9a9a9 !important;
-  position: -webkit-sticky !important;
-  position: sticky !important;
-  top: 0 !important;
-  
+	/* background-color: #ffbb33 !important; */
+	position: -webkit-sticky !important;
+	position: sticky !important;
+	top: 0 !important;
+	-ms-flex: 1 1 auto !important;
+	flex: 1 1 auto !important;
+	padding: 1.25rem !important;
+	background: rgb(28, 242, 14);
+	background: linear-gradient(299deg, rgba(28, 242, 14, 1) 0%,
+		rgba(6, 107, 10, 1) 100%);
 }
