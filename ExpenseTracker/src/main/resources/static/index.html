@@ -10,32 +10,43 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="bootstrap/bootstrap-4.3.1.css">
+<link rel="stylesheet" href="css/custom.css">
 <title>Expenses</title>
 </head>
 <body>
 	<div class="container jumbotron">
-		<form name="expenseForm">
-			<input class="form-control" type="number" name="expenseId">
-			<button name="lookup">Expense by Id</button>
-		</form>
-		<hr>
 		<div id="output">
-         <div id="expenseData">
-        	<form name="deleteExpenseForm"></form>
-         </div>
-      </div>
-		
+			<div id="expenseData">
+				<form name="deleteExpenseForm"></form>
+			</div>
+			<div id="expenseData">
+				<form name="updateExpenseForm"></form>
+			</div>
+		</div>
+		<hr>
+		<form name="expenseForm">
+			<input class="form-control" type="number" name="expenseId"
+				placeholder="Enter Expense Id" /><br> <input type="submit"
+				name="lookup" value="Find By Id" />
+		</form>
+		<br>
 		<form name="addExpenseForm">
-         <input class="form-control" type="date" name="expenseDate" placeholder="expense date" />
-         <input class="form-control" type="text" name="paidToName" placeholder="expense paid to name (ex.Home Depot)" />
-         <input class="form-control" type="text" name="expenseType" placeholder="expense type/category" />
-         <input class="form-control" type="text" name="paymentType" placeholder="payment type (ex.Cash or CC)" />
-         <input class="form-control" type="number" name="workorderNumber" placeholder="work order number" />
-         <input class="form-control" type="text" name="description" placeholder="expense description" />
-         <input class="form-control" type="number" name="expenseTotal" placeholder="expense total amount" />
-         <button name="create"> Create </button>
-      </form>
+			<input class="form-control" type="date" name="expenseDate"
+				placeholder="expense date" /> <input class="form-control"
+				type="text" name="paidToName"
+				placeholder="expense paid to name (ex.Home Depot)" /> <input
+				class="form-control" type="text" name="expenseType"
+				placeholder="expense type/category" /> <input class="form-control"
+				type="text" name="paymentType"
+				placeholder="payment type (ex.Cash or CC)" /> <input
+				class="form-control" type="number" name="workorderNumber"
+				placeholder="work order number" /> <input class="form-control"
+				type="text" name="description" placeholder="expense description" />
+			<input class="form-control" type="number" name="expenseTotal"
+				placeholder="expense total amount" /><br>
+			<button name="create">Create</button>
+		</form>
 	</div>
-	
+	<div></div>
 </body>
 </html>

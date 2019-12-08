@@ -22,7 +22,7 @@ DROP TABLE IF EXISTS `expense` ;
 
 CREATE TABLE IF NOT EXISTS `expense` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `expense_date` DATETIME NOT NULL,
+  `expense_date` DATE NOT NULL,
   `paid_to` VARCHAR(45) NOT NULL,
   `expense_type` VARCHAR(45) NULL DEFAULT NULL,
   `payment_type` VARCHAR(45) NULL DEFAULT NULL,
