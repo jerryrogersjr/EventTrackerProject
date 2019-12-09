@@ -43,7 +43,7 @@ updated, or deleted.
 - [x] A new event object implements full CRUD.
 - [x] All interactions with the database are done so RESTfully.
 - [x] App uses Javascript to access data and manipulate the DOM.
-- [ ]App presents the aggregated data in some additional format.
+- [ ] App presents the aggregated data in some additional format.
 
 ### Phase 1
 
