@@ -33,10 +33,9 @@ function init() {
 // ********** GET LIST of expenses **********
 
 function getExpenses() {
-	console.log('get list');
 
 	var xhr = new XMLHttpRequest();
-	xhr.open('GET', 'http://localhost:8087/api/expenses', true);
+	xhr.open('GET', 'api/expenses', true);
 
 	xhr.onreadystatechange = function() {
 
@@ -44,7 +43,16 @@ function getExpenses() {
 		if (xhr.readyState === 4 && xhr.status < 400) {
 			var expenses = JSON.parse(xhr.response);
 			displayExpenses(expenses);
-			console.log(expenses);
+			
+			let totalSum = 0;
+			
+			for (let i = 0; i < expenses[i].length; i++) {
+				
+				totalSum += expenses[i].expenseTotal;
+				
+			}
+			console.log('Expenses Sum = ' + totalSum);
+			
 		}
 
 		if (xhr.readyState === 4 && xhr.status >= 400) {
@@ -100,7 +108,7 @@ function displayExpenses(expenses) {
 		tr.appendChild(td);
 
 		td = document.createElement('td');
-		td.textContent = expense.expenseTotal;
+		td.textContent = "$ " + expense.expenseTotal;
 		tr.appendChild(td);
 
 		table.appendChild(tr);
@@ -141,7 +149,7 @@ function getExpense(expenseId) {
 function addNewExpense() {
 
 	var xhr = new XMLHttpRequest();
-	xhr.open('POST', 'http://localhost:8087/api/expenses', true);
+	xhr.open('POST', 'api/expenses', true);
 	xhr.setRequestHeader("Content-type", "application/json");
 
 	xhr.onreadystatechange = function() {
@@ -183,7 +191,7 @@ function updateExpense(expense) {
 	console.log('updatedExpense' + expense.expenseTotal);
 	
 	var xhr = new XMLHttpRequest();
-	xhr.open('POST', 'http://localhost:8087/api/expenses/' + expense.id, true);
+	xhr.open('POST', 'api/expenses/' + expense.id, true);
 	xhr.setRequestHeader("Content-type", "application/json");
 
 	xhr.onreadystatechange = function() {
@@ -201,9 +209,6 @@ function updateExpense(expense) {
 			scrollOnClick();
 		}
 	};
-
-//	console.log("inside update exp at crash site " + document.updateForm.paidToName.value);
-	
 
 	var updatedExpenseObject = {
 			expenseDate : document.updateForm.expenseDate.value,
@@ -376,7 +381,7 @@ function showUpdateForm(expense) {
 function deleteExpense(expenseId) {
 
 	var xhr = new XMLHttpRequest();
-	xhr.open('DELETE', 'http://localhost:8087/api/expenses/' + expenseId, true);
+	xhr.open('DELETE', 'api/expenses/' + expenseId, true);
 	xhr.setRequestHeader("Content-type", "application/json");
 
 	xhr.onreadystatechange = function() {
@@ -490,10 +495,3 @@ function displayExpense(expense) {
 
 }
 
-function countExpense(expenses) {
-
-}
-
-function averageExpense(expenses) {
-
-}
