@@ -14,8 +14,8 @@ updated, or deleted.
 
 * Follow On: Full CRUD with Javascript XMLHttpRequest implemented.
 
-![Expense Tracker](ExpenseTracker/src/main/resources/static/images/iPad250x250.png "Screenshot of Feature A mockup")
-![Expense Tracker2](ExpenseTracker/src/main/resources/static/images/ipad2250x250.png "Screenshot of Feature A mockup")
+![Expense Tracker](ExpenseTracker/src/main/resources/static/images/iPad175x175.png)
+![Expense Tracker2](ExpenseTracker/src/main/resources/static/images/ipad2.png)
 
 ## Topics Covered/Learning Objectives
 
