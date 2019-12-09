@@ -4,10 +4,6 @@
 This weekend, we took the Spring REST and implemented a front end using
 XHR / XMLHttpRequest with Javascript.
 
-* Following Javascript implementation:
-![Expense Tracker](ExpenseTracker/src/main/resources/static/images/iPad.png)
-![Expense Tracker2](ExpenseTracker/src/main/resources/static/images/ipad2.png)
-
 ## Overview
 
 'Event Tracker' is a broad term for anything that keeps track of information over time.
@@ -16,6 +12,9 @@ Here, I chose a basic expense tracker. An expense can be created, read,
 updated, or deleted.
 
 * Follow On: Full CRUD with Javascript XMLHttpRequest implemented.
+
+![Expense Tracker](ExpenseTracker/src/main/resources/static/images/iPad.png)
+![Expense Tracker2](ExpenseTracker/src/main/resources/static/images/ipad2.png)
 
 ## Topics Covered/Learning Objectives
 
