@@ -1,8 +1,12 @@
 # Event Tracker Project
 ## Expense Tracker
-** NOTE: Currently no front end UI to view. This project was directed
-to work on RESTful services. I will build out the front end to experience
-the CRUD soon if we aren't using this project for follow on in class.
+
+This weekend, we took the Spring REST and implemented a front end using
+XHR / XMLHttpRequest with Javascript.
+
+* Following Javascript implementation:
+![Expense Tracker](ExpenseTracker/src/main/resources/static/images/iPad.png)
+![Expense Tracker2](ExpenseTracker/src/main/resources/static/images/ipad2.png)
 
 ## Overview
 
@@ -11,7 +15,9 @@ the CRUD soon if we aren't using this project for follow on in class.
 Here, I chose a basic expense tracker. An expense can be created, read,
 updated, or deleted.
 
-### Topics Covered/Learning Objectives
+* Follow On: Full CRUD with Javascript XMLHttpRequest implemented.
+
+## Topics Covered/Learning Objectives
 
 * Create a MySql DB table
 * Create a JPA Project
@@ -20,9 +26,26 @@ updated, or deleted.
 * Configure a Spring Boot app to publish a REST API.
 * Use Spring REST annotations.
 * Use Spring Data JPA to perform all CRUD operations.
-* Send and receive JSON.
+* Send and receive JSON
 
-### Project Requirements
+### Follow On with Javascript
+
+* Adding scripts to a web application
+* Send asynchronous requests to Java controllers with JavaScript's ```XMLHttpRequest```
+* Consume and parse JSON responses with JavaScript
+* Build HTML with JavaScript
+* Send POST/PUT/DELETE requests with ```XMLHttpRequest```
+
+## Project Requirements
+
+### Phase 2
+
+- [x] A new event object implements full CRUD.
+- [x] All interactions with the database are done so RESTfully.
+- [x] App uses Javascript to access data and manipulate the DOM.
+- []App presents the aggregated data in some additional format.
+
+### Phase 1
 
 - [x] Create a new STS workspace for the project.
 - [x] Initialize the workspace with git.
@@ -85,6 +108,8 @@ public interface ExpenseRepository extends JpaRepository<Expense, Integer>```
     }
 ```
 ### Technologies Used
+
+* Follow On: Javascript
 
 * Java
 * JPA
