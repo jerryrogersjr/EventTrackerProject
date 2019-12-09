@@ -31,7 +31,7 @@ body {
 	top: 0 !important;
 	-ms-flex: 1 1 auto !important;
 	flex: 1 1 auto !important;
-	padding: 1.25rem !important;
+	padding: 1.00rem !important;
 	background: rgb(28, 242, 14);
 	background: linear-gradient(299deg, rgba(28, 242, 14, 1) 0%,
 		rgba(6, 107, 10, 1) 100%);

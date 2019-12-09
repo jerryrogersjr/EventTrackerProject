@@ -14,12 +14,12 @@
 <title>Expenses</title>
 </head>
 <body>
-	<div class="container solid-sticky rounded shadow">
+	<!--  <div class="container solid-sticky rounded shadow">-->
 		<br>
-		<h1 class="font-weight-light" align="center">Keep Track of Your
+		<h1 class="font-weight-light container solid-sticky rounded shadow" align="center">Keep Track of Your
 			Expenses</h1>
 		<br>
-	</div>
+	<!-- </div> -->
 	<br>
 	<div class="container bg-success rounded shadow">
 		<br>
@@ -35,31 +35,31 @@
 		<form class="card-body bg-light rounded" name="expenseForm">
 			<h3 class="font-weight-light">Search Expense by Id</h3>
 			<input class="form-control" type="number" name="expenseId"
-				placeholder="Enter Expense Id" /><br> 
-				<input
-				class="btn btn-outline-primary" onclick="scrollOnClick()" type="submit" name="lookup"
-				value="Find By Id" />
-				<input
-				class="btn btn-outline-primary" onclick="scrollOnClick()" type="submit" name="listBtn"
-				value="Search List" />
+				placeholder="Enter Expense Id" /><br> <input
+				class="btn btn-outline-primary" onclick="scrollOnClick()"
+				type="submit" name="lookup" value="Find By Id" /> <input
+				class="btn btn-outline-primary" onclick="scrollOnClick()"
+				type="submit" name="listBtn" value="Search List" />
 		</form>
 		<br>
 		<form class="card-body bg-light rounded" name="addExpenseForm">
 			<h3 class="font-weight-light">Add New Expense</h3>
 			<input class="form-control" type="date" name="expenseDate"
-				placeholder="expense date" /> <input class="form-control"
+				placeholder="expense date" /> <br> <input class="form-control"
 				type="text" name="paidToName"
-				placeholder="expense paid to name (ex.Home Depot)" /> <input
-				class="form-control" type="text" name="expenseType"
-				placeholder="expense type/category" /> <input class="form-control"
-				type="text" name="paymentType"
-				placeholder="payment type (ex.Cash or CC)" /> <input
+				placeholder="expense paid to name (ex.Home Depot)" /> <br>
+			<input class="form-control" type="text" name="expenseType"
+				placeholder="expense type/category" /><br> <input
+				class="form-control" type="text" name="paymentType"
+				placeholder="payment type (ex.Cash or CC)" /><br> <input
 				class="form-control" type="number" name="workorderNumber"
-				placeholder="work order or receipt number" /> <input class="form-control"
-				type="text" name="description" placeholder="expense description" />
-			<input class="form-control" type="number" name="expenseTotal"
+				placeholder="work order or receipt number" /> <br> <input
+				class="form-control" type="text" name="description"
+				placeholder="expense description" /> <br> <input
+				class="form-control" type="number" name="expenseTotal"
 				placeholder="expense total amount" /><br>
-			<button class="btn btn-outline-primary" onclick="scrollOnClick()" name="create">Create</button>
+			<button class="btn btn-outline-primary" onclick="scrollOnClick()"
+				name="create">Create</button>
 		</form>
 		<br>
 	</div>

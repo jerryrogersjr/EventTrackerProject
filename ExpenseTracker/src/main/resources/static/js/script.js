@@ -85,8 +85,10 @@ function displayExpenses(expenses) {
 	tr.appendChild(th);
 
 	table.appendChild(tr);
-
+	
+	
 	expenses.forEach(function(expense, index) {
+		
 		let tr = document.createElement('tr');
 
 		let td = document.createElement('td');
@@ -200,8 +202,7 @@ function updateExpense(expense) {
 		}
 	};
 
-//	let form = document.updateForm;
-	console.log("inside update exp at crash site " + document.updateForm.paidToName.value);
+//	console.log("inside update exp at crash site " + document.updateForm.paidToName.value);
 	
 
 	var updatedExpenseObject = {
