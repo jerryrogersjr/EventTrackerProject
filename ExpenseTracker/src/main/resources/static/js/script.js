@@ -42,19 +42,31 @@ function getExpenses() {
 		console.log('in list on ready')
 		if (xhr.readyState === 4 && xhr.status < 400) {
 			var expenses = JSON.parse(xhr.response);
+			
+			// *** data aggregation ***
+			let sum = 0.00;
+			let count = 0;
+			for (let i = 0; i < expenses.length; i++){
+				sum += expenses[i].expenseTotal;
+				count++;
+			}
+			console.log('Total Expenses: $ ' + sum); // sum of expenses
+			let avg;
+			avg = sum / count;
+			console.log('Expense Average: $ ' +avg); // avg of expenses
+			// *********************************************************
+			// *** NOTE:  Need to append the sum/avg in the display view
+			// *** Current aggregation is in the console.
+			
+			// let h5 = document.createElement('h5');
+			// h5.textContent = sum;
+			// *********************************************************
+			
 			displayExpenses(expenses);
 
-			let totalSum = 0;
-
-			for (let i = 0; i < expenses[i].length; i++) {
-
-				totalSum += expenses[i].expenseTotal;
-
-			}
-			console.log('Expenses Sum = ' + totalSum);
-
+			
 		}
-
+		
 		if (xhr.readyState === 4 && xhr.status >= 400) {
 			console.error(xhr.status + ': ' + xhr.response);
 			var dataDiv = document.getElementById('expenseData');
