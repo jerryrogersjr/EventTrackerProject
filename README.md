@@ -1,8 +1,9 @@
 # Event Tracker Project
 ## Expense Tracker
 
-This weekend, we took the Spring REST and implemented a front end using
-XHR / XMLHttpRequest with Javascript.
+* Phase 1: Created RESTful api and tested form CRUD
+* Phase 2: Implemented Javascript XMLHttpRequest CRUD
+* Phase 3: TBD
 
 ## Overview
 
