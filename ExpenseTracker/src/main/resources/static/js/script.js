@@ -27,7 +27,7 @@ function init() {
 		event.preventDefault();
 		addNewExpense();
 	});
-	
+
 }
 
 // ********** GET LIST of expenses **********
@@ -43,16 +43,16 @@ function getExpenses() {
 		if (xhr.readyState === 4 && xhr.status < 400) {
 			var expenses = JSON.parse(xhr.response);
 			displayExpenses(expenses);
-			
+
 			let totalSum = 0;
-			
+
 			for (let i = 0; i < expenses[i].length; i++) {
-				
+
 				totalSum += expenses[i].expenseTotal;
-				
+
 			}
 			console.log('Expenses Sum = ' + totalSum);
-			
+
 		}
 
 		if (xhr.readyState === 4 && xhr.status >= 400) {
@@ -93,10 +93,9 @@ function displayExpenses(expenses) {
 	tr.appendChild(th);
 
 	table.appendChild(tr);
-	
-	
+
 	expenses.forEach(function(expense, index) {
-		
+
 		let tr = document.createElement('tr');
 
 		let td = document.createElement('td');
@@ -185,11 +184,11 @@ function addNewExpense() {
 // ********* UPDATE expense **********
 
 function updateExpense(expense) {
-	
+
 	console.log('form' + expense);
 	console.log('data' + expenseData);
 	console.log('updatedExpense' + expense.expenseTotal);
-	
+
 	var xhr = new XMLHttpRequest();
 	xhr.open('POST', 'api/expenses/' + expense.id, true);
 	xhr.setRequestHeader("Content-type", "application/json");
@@ -199,7 +198,7 @@ function updateExpense(expense) {
 		if (xhr.readyState === 4 && xhr.status < 400) {
 			var expenseObj = JSON.parse(xhr.responseText);
 			displayExpense(expenseObj);
-			
+
 		}
 
 		if (xhr.readyState === 4 && xhr.status >= 400) {
@@ -211,13 +210,13 @@ function updateExpense(expense) {
 	};
 
 	var updatedExpenseObject = {
-			expenseDate : document.updateForm.expenseDate.value,
-			paidToName : document.updateForm.paidToName.value,
-			expenseType : document.updateForm.expenseType.value,
-			paymentType : document.updateForm.paymentType.value,
-			workorderNumber : document.updateForm.workorderNumber.value,
-			description : document.updateForm.description.value,
-			expenseTotal : document.updateForm.expenseTotal.value
+		expenseDate : document.updateForm.expenseDate.value,
+		paidToName : document.updateForm.paidToName.value,
+		expenseType : document.updateForm.expenseType.value,
+		paymentType : document.updateForm.paymentType.value,
+		workorderNumber : document.updateForm.workorderNumber.value,
+		description : document.updateForm.description.value,
+		expenseTotal : document.updateForm.expenseTotal.value
 	};
 
 	var updatedExpenseJsonString = JSON.stringify(updatedExpenseObject);
@@ -228,31 +227,30 @@ function updateExpense(expense) {
 // ********* UPDATE FORM **********
 
 function showUpdateForm(expense) {
-	
+
 	console.log('expense' + expense);
-	
+
 	var dataDiv = document.getElementById('expenseData');
 	dataDiv.textContent = '';
-	
+
 	console.log('edata' + expenseData);
-	
+
 	let h3 = document.createElement('h3');
 	h3.textContent = ("Update Expense (" + expense.id + ") for " + expense.paidToName);
 	h3.className = "font-weight-light";
 	dataDiv.appendChild(h3);
-	
 
 	let updateForm = document.createElement('form');
 	updateForm.name = 'updateForm';
 	dataDiv.appendChild(updateForm);
-	
+
 	let br = document.createElement('br');
 	updateForm.appendChild(br);
-	
+
 	let label = document.createElement('label');
 	label.textContent = 'Date';
 	updateForm.appendChild(label);
-	
+
 	let input = document.createElement('input');
 	input.className = 'form-control';
 	input.required = '';
@@ -260,119 +258,123 @@ function showUpdateForm(expense) {
 	input.name = 'expenseDate';
 	input.value = expense.expenseDate;
 	updateForm.appendChild(input);
-	
+
 	br = document.createElement('br');
 	updateForm.appendChild(br);
-	
+
 	label = document.createElement('label');
 	label.textContent = 'Name';
 	updateForm.appendChild(label);
-	
+
 	input = document.createElement('input');
 	input.className = 'form-control';
 	input.type = 'text';
 	input.name = 'paidToName';
 	input.value = expense.paidToName;
 	updateForm.appendChild(input);
-	
+
 	br = document.createElement('br');
 	updateForm.appendChild(br);
-	
+
 	label = document.createElement('label');
 	label.textContent = 'Expense Type';
 	updateForm.appendChild(label);
-	
+
 	input = document.createElement('input');
 	input.className = 'form-control';
 	input.type = 'text';
 	input.name = 'expenseType';
 	input.value = expense.expenseType;
 	updateForm.appendChild(input);
-	
+
 	br = document.createElement('br');
 	updateForm.appendChild(br);
-	
+
 	label = document.createElement('label');
 	label.textContent = 'Payment Type';
 	updateForm.appendChild(label);
-	
+
 	input = document.createElement('input');
 	input.className = 'form-control';
 	input.type = 'text';
 	input.name = 'paymentType';
 	input.value = expense.paymentType;
 	updateForm.appendChild(input);
-	
+
 	br = document.createElement('br');
 	updateForm.appendChild(br);
-	
+
 	label = document.createElement('label');
 	label.textContent = 'Work Order or Receipt Number';
 	updateForm.appendChild(label);
-	
+
 	input = document.createElement('input');
 	input.className = 'form-control';
 	input.type = 'number';
 	input.name = 'workorderNumber';
 	input.value = expense.workorderNumber;
 	updateForm.appendChild(input);
-	
+
 	br = document.createElement('br');
 	updateForm.appendChild(br);
-	
+
 	label = document.createElement('label');
 	label.textContent = 'Description';
 	updateForm.appendChild(label);
-	
+
 	input = document.createElement('input');
 	input.className = 'form-control';
 	input.type = 'text';
 	input.name = 'description';
 	input.value = expense.description;
 	updateForm.appendChild(input);
-	
+
 	br = document.createElement('br');
 	updateForm.appendChild(br);
-	
+
 	label = document.createElement('label');
 	label.textContent = 'Expense Total';
 	updateForm.appendChild(label);
-	
+
 	input = document.createElement('input');
 	input.className = 'form-control';
 	input.type = 'number';
 	input.name = 'expenseTotal';
 	input.value = expense.expenseTotal;
 	updateForm.appendChild(input);
-	
+
 	br = document.createElement('br');
 	updateForm.appendChild(br);
-	
+
 	let button = document.createElement('button');
 	button.className = 'btn btn-outline-primary';
 	button.textContent = "Update Expense";
 	button.name = 'update';
 	updateForm.appendChild(button);
-	
+
 	let cancelButton = document.createElement('button');
 	cancelButton.className = 'btn btn-outline-secondary';
 	cancelButton.textContent = "Cancel";
 	cancelButton.name = 'cancel';
 	updateForm.appendChild(cancelButton);
-	
+
 	button.addEventListener('click', function(event) {
 		event.preventDefault();
-		alert('Are you sure you\'d like to update this expense?');
-		scrollOnClick();
-		updateExpense(expense);
+		if (confirm('Are you sure you\'d like to update this expense?')) {
+			scrollOnClick();
+			updateExpense(expense);
+		} else {
+			// do nothing
+			console.log('event aborted');
+		}
 	});
-	
+
 	cancelButton.addEventListener('click', function(event) {
 		event.preventDefault();
 		scrollOnClick();
 		getExpenses();
 	});
-	
+
 	dataDiv.appendChild(updateForm);
 
 }
@@ -488,10 +490,14 @@ function displayExpense(expense) {
 
 	delButton.addEventListener('click', function(e) {
 		e.preventDefault();
-		alert('Are you sure you\'d like to delete this expense?');
-		scrollOnClick();
-		deleteExpense(expense.id);
+		if (confirm('Are you sure you\'d like to delete this expense?')) {
+			scrollOnClick();
+			deleteExpense(expense.id);
+		} else {
+			// do nothing
+			console.log('event aborted');
+		}
+
 	});
 
 }
-
