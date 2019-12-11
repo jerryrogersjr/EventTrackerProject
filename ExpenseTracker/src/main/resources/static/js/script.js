@@ -54,12 +54,10 @@ function getExpenses() {
 			let avg;
 			avg = sum / count;
 			console.log('Expense Average: $ ' +avg); // avg of expenses
+			
 			// *********************************************************
 			// *** NOTE:  Need to append the sum/avg in the display view
 			// *** Current aggregation is in the console.
-			
-			// let h5 = document.createElement('h5');
-			// h5.textContent = sum;
 			// *********************************************************
 			
 			displayExpenses(expenses);
