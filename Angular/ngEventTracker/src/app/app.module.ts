@@ -1,3 +1,4 @@
+import { ExpenseService } from './services/expense.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -11,6 +12,9 @@ import { AboutComponent } from './components/about/about.component';
 import { ExpenseListComponent } from './components/expense-list/expense-list.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
+import { DatePipe } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,10 +29,12 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    HttpClientModule,
     AppRoutingModule,
     // NgbModule
   ],
-  providers: [],
+  providers: [ExpenseService, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

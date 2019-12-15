@@ -1,1 +1,60 @@
-<p>new-expense works!</p>
+<div>
+  <div>
+    <form class="card-body bg-light rounded" name="addExpenseForm">
+      <h3 class="font-weight-light">Add Expense</h3>
+      <input
+        class="form-control"
+        type="date"
+        name="expenseDate"
+        placeholder="expense date"
+      />
+      <br />
+      <input
+        class="form-control"
+        type="text"
+        name="paidToName"
+        placeholder="expense paid to name (ex.Home Depot)"
+      />
+      <br />
+      <input
+        class="form-control"
+        type="text"
+        name="expenseType"
+        placeholder="expense type/category"
+      /><br />
+      <input
+        class="form-control"
+        type="text"
+        name="paymentType"
+        placeholder="payment type (ex.Cash or CC)"
+      /><br />
+      <input
+        class="form-control"
+        type="number"
+        name="workorderNumber"
+        placeholder="work order or receipt number"
+      />
+      <br />
+      <input
+        class="form-control"
+        type="text"
+        name="description"
+        placeholder="expense description"
+      />
+      <br />
+      <input
+        class="form-control"
+        type="number"
+        name="expenseTotal"
+        placeholder="expense total amount"
+      /><br />
+      <button
+        class="btn btn-outline-primary"
+        onclick="scrollOnClick()"
+        name="create"
+      >
+        Create
+      </button>
+    </form>
+  </div>
+</div>
