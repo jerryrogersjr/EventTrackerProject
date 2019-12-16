@@ -40,7 +40,6 @@ export class ExpenseListComponent implements OnInit {
     console.log(expense);
 
     this.expenseSvc.updateExpense(expense).subscribe(
-
       uData => {
         this.loadList();
         this.updateExpense = null;
@@ -69,5 +68,22 @@ export class ExpenseListComponent implements OnInit {
 
   public errorUpdateDisplay() {
     console.log('error updating');
+  }
+
+  public totalExpenses() {
+    return this.expenses.length;
+  }
+
+  public expenseSum(expenses: Expense[]) {
+    let sum = 0.0;
+    let count = 0;
+    // tslint:disable-next-line: prefer-for-of
+    for (let i = 0; i < expenses.length; i++) {
+      sum += expenses[i].expenseTotal;
+      count++;
+    }
+    console.log(sum);
+
+    return sum;
   }
 }

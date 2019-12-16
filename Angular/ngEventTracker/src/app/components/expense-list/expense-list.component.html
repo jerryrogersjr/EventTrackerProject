@@ -1,6 +1,7 @@
 <br />
 <!-- Display List -->
-<h1 *ngIf="!selectedExpense">List of Expenses</h1>
+<h1 *ngIf="!selectedExpense">List of Expenses <span class="badge badge-primary">{{ totalExpenses() }}</span></h1>
+<h4>Total Expenses: $ {{ expenseSum(expenses) | number:'1.1-2' }}</h4>
 <br />
 <div id="expenseList" *ngIf="!selectedExpense">
   <table class="table table-striped table-hover">
