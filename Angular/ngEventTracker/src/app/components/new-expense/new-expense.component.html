@@ -1,14 +1,13 @@
 <div class="container">
-  <div ng-form="myForm">
+  <div> <!-- ng-form="myForm" -->
     <br />
     <h3 class="font-weight-light">Add Expense</h3>
-    <form class="card-body bg-light rounded" #createForm="ngForm">
+    <form class="card-body bg-light rounded" #createForm="ngForm" >
       <input
         class="form-control"
         type="date"
         name="expenseDate"
         placeholder="expense date"
-        required #edate="ngModel"
         [(ngModel)]="newExpense.expenseDate"
         required
       />
@@ -18,7 +17,6 @@
         type="text"
         name="paidToName"
         placeholder="expense paid to name (ex.Home Depot)"
-        required #pname="ngModel"
         [(ngModel)]="newExpense.paidToName"
         required
       />

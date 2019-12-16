@@ -3,7 +3,7 @@ import { Expense } from './../../models/expense';
 import { ExpenseService } from './../../services/expense.service';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { NgModel } from '@angular/forms';
+import { NgModel, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-new-expense',
@@ -19,7 +19,7 @@ export class NewExpenseComponent implements OnInit {
 
   ngOnInit() {}
 
-  public createExpense(newExpense: NgModel) {
+  public createExpense(newExpense: NgForm) {
     console.log(newExpense);
     this.expenseSvc.createExpense(this.newExpense).subscribe(
       data => {

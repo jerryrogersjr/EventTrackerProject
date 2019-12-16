@@ -3,7 +3,7 @@
 
 * Phase 1: Created RESTful api and tested form CRUD
 * Phase 2: Implemented Javascript XMLHttpRequest CRUD
-* Phase 3: TBD
+* Phase 3: Implemented Angular to perform CRUD on RESTful services (SpringBootProject)
 
 ## Overview
 
@@ -12,11 +12,15 @@
 Here, I chose a basic expense tracker. An expense can be created, read,
 updated, or deleted.
 
-* Follow On: Full CRUD with Javascript XMLHttpRequest implemented.
+### Follow On: Full CRUD with Angular implemented.
 
-<!-- ![Expense Tracker](ExpenseTracker/src/main/resources/static/images/iPad.png)
-![Expense Tracker2](ExpenseTracker/src/main/resources/static/images/ipad2.png) -->
-![Expense Tracker](ExpenseTracker/src/main/resources/static/images/demoView.jpg)
+![ExpenseTracker](ExpenseTracker/src/main/resources/public/images/ExpenseTracker.jpg)
+
+
+### Follow On: Full CRUD with Javascript XMLHttpRequest implemented.
+
+![Expense Tracker](ExpenseTracker/src/main/resources/public/images/demoView.jpg)
+<!-- ExpenseTracker/src/main/resources/public/images/demoView.jpg -->
 
 
 ## Topics Covered/Learning Objectives
@@ -39,6 +43,10 @@ updated, or deleted.
 * Send POST/PUT/DELETE requests with ```XMLHttpRequest```
 
 ## Project Requirements
+
+### Phase 3
+
+To Be Added...
 
 ### Phase 2
 

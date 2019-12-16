@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { Expense } from './../models/expense';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -13,7 +14,10 @@ export class ExpenseService {
 
   expenses: Expense[] = [];
   newExpense = new Expense();
-  private url = 'http://localhost:8087/api/expenses';
+  // private url = 'http://localhost:8087/api/expenses';   // Local Testing
+
+  private baseUrl = '/ExpenseTracker/';                    // Production
+  private url = environment.baseUrl + 'api/expenses';
 
   constructor(private http: HttpClient, private datePipe: DatePipe) {}
 

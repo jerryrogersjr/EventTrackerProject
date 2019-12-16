@@ -1,67 +1,27 @@
 <!DOCTYPE html>
-<html>
-<head>
-<script src="bootstrap/jquery-3.3.1.min.js"></script>
-<!-- Bootstrap order: jquery, popper, js -->
-<script src="bootstrap/popper.min.js"></script>
-<script src="bootstrap/bootstrap-4.3.1.js"></script>
-<script type="text/javascript" src="js/script.js"></script>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="css/custom.css">
-<link rel="stylesheet" href="bootstrap/bootstrap-4.3.1.css">
-<title>Expenses</title>
-</head>
-<body>
-	<br>
-	<h1 class="font-weight-light container solid-sticky rounded shadow"
-		align="center">Keep Track of Your Expenses</h1>
-	<br>
-	<br>
-	<div class="container bg-success rounded shadow">
-		<br>
-		<div class="card-body bg-light shadow rounded" id="output">
-			<div id="expenseData">
-				<form name="deleteExpenseForm"></form>
-			</div>
-		</div>
-		<br>
-		<!-- Display by Id and button actions for list -->
-		<form class="card-body bg-light rounded" name="expenseForm">
-			<h3 class="font-weight-light">Search Expense by Id</h3>
-			<input class="form-control" type="number" name="expenseId"
-				placeholder="Enter Expense Id" /><br> <input
-				class="btn btn-outline-primary" onclick="scrollOnClick()"
-				type="submit" name="lookup" value="Find By Id" /> <input
-				class="btn btn-outline-primary" onclick="scrollOnClick()"
-				type="submit" name="listBtn" value="Search List" />
-		</form>
-		<br> 
-		<!-- Create Form  -->
-		<form class="card-body bg-light rounded" name="addExpenseForm">
-			<h3 class="font-weight-light">Add New Expense</h3>
-			<input class="form-control" type="date" name="expenseDate"
-				placeholder="expense date" /> <br> <input class="form-control"
-				type="text" name="paidToName"
-				placeholder="expense paid to name (ex.Home Depot)" /> <br> <input
-				class="form-control" type="text" name="expenseType"
-				placeholder="expense type/category" /><br> <input
-				class="form-control" type="text" name="paymentType"
-				placeholder="payment type (ex.Cash or CC)" /><br> <input
-				class="form-control" type="number" name="workorderNumber"
-				placeholder="work order or receipt number" /> <br> <input
-				class="form-control" type="text" name="description"
-				placeholder="expense description" /> <br> <input
-				class="form-control" type="number" name="expenseTotal"
-				placeholder="expense total amount" /><br>
-			<button class="btn btn-outline-primary" onclick="scrollOnClick()"
-				name="create">Create</button>
-		</form>
-		<br>
-	</div>
-	<footer>
-		<br>
-	</footer>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Expenses</title>
+    <base href="/ExpenseTracker/">    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="image" type="image" href="favicon.ico" />
+  <link rel="stylesheet" href="styles.32cf3239d91570688d4c.css"></head>
+  <body>
+    <app-root></app-root>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  <script src="runtime-es2015.edb2fcf2778e7bf1d426.js" type="module"></script><script src="runtime-es5.edb2fcf2778e7bf1d426.js" nomodule defer></script><script src="polyfills-es5.6696c533341b95a3d617.js" nomodule defer></script><script src="polyfills-es2015.2987770fde9daa1d8a2e.js" type="module"></script><script src="main-es2015.94197bbf21c393739bc3.js" type="module"></script><script src="main-es5.94197bbf21c393739bc3.js" nomodule defer></script></body>
 </html>
