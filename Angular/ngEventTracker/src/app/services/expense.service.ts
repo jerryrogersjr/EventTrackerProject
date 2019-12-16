@@ -1,31 +1,35 @@
 import { Expense } from './../models/expense';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Router } from '@angular/router';
 import { catchError, tap } from 'rxjs/operators';
-import { Observable, throwError } from 'rxjs';
+import { throwError } from 'rxjs';
+import { DatePipe } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class ExpenseService {
-  private baseUrl = 'http://localhost:8087/';
-  private url = this.baseUrl + 'api/expenses';
 
-  constructor(private http: HttpClient, private router: Router) {}
+  expenses: Expense[] = [];
+  newExpense = new Expense();
+  private url = 'http://localhost:8087/api/expenses';
+
+  constructor(private http: HttpClient, private datePipe: DatePipe) {}
 
   // Display List of Expenses *****************************
   public index() {
+
     const httpOptions = {
       headers: new HttpHeaders({
+        // 'X-Requested-With': 'XMLHttpRequest',
         'Content-Type': 'application/json'
       })
     };
-    return this.http.get<Expense[]>(this.baseUrl, httpOptions).pipe(
+    return this.http.get<Expense[]>(this.url, httpOptions).pipe(
       catchError((err: any) => {
         console.log(err);
-        return throwError('Service Error: Index Method');
+        return throwError('Service: Index Method');
       })
     );
   }
@@ -38,10 +42,10 @@ export class ExpenseService {
       })
     };
 
-    return this.http.get<Expense>(this.baseUrl + '/' + id, httpOptions).pipe(
+    return this.http.get<Expense>(this.url + '/' + id, httpOptions).pipe(
       catchError((err: any) => {
         console.log(err);
-        return throwError('Service Error: FindById Method');
+        return throwError('Service: FindById Method');
       })
     );
   }
@@ -54,29 +58,31 @@ export class ExpenseService {
       })
     };
 
-    return this.http.post<Expense>(this.baseUrl, newExpense, httpOptions).pipe(
+    return this.http.post<Expense>(this.url, newExpense, httpOptions).pipe(
       catchError((err: any) => {
         console.log(err);
-        return throwError('Service Error: Create New Expense Method');
+        return throwError('Service: Create New Expense Method');
       })
     );
   }
 
   // Update Expense *****************************
-  public updateExpense(id: number, updateExpense: Expense) {
+  public updateExpense(expense: Expense) {
+    console.log(expense);
+
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
-        // Authorization: "Basic " + this.authsvc.getCredentials()
       })
     };
 
     return this.http
-      .put<Event>(this.baseUrl + '/' + id, updateExpense, httpOptions)
+      // .put<Expense>(`${this.url}/${expense.id}`, expense, httpOptions)
+      .post(this.url + '/' + expense.id, expense, httpOptions)
       .pipe(
         catchError((err: any) => {
           console.log(err);
-          return throwError('Service Error: Create Method');
+          return throwError('Service: Update Method');
         })
       );
   }
@@ -89,10 +95,10 @@ export class ExpenseService {
       })
     };
 
-    return this.http.delete<any>(this.baseUrl + '/' + id, httpOptions).pipe(
+    return this.http.delete<any>(this.url + '/' + id).pipe(
       catchError((err: any) => {
         console.log(err);
-        return throwError('Service Error: Delete Expense Method');
+        return throwError('Service: Delete Expense Method');
       })
     );
   }

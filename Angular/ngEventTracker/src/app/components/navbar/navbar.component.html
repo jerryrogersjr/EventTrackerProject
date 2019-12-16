@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+<nav class="navbar navbar-expand-lg navbar-dark bg-success sticky">
   <a class="navbar-brand" href="#">Expense Keeper</a>
   <button
     class="navbar-toggler sticky"
@@ -16,9 +16,16 @@
       <a class="nav-item nav-link active" [routerLink]="['/home']"
         >Home <span class="sr-only">(current)</span></a
       >
-      <a class="nav-item nav-link" [routerLink]="['/expenses']">Expense List</a>
-      <a class="nav-item nav-link" [routerLink]="['/create-expense']">Add Expense</a>
-      <a class="nav-item nav-link" [routerLink]="['/about']">About</a>
+      <!-- <a class="nav-item nav-link" [routerLink]="['/expenses']">Expense List</a> -->
+      <a class="nav-item nav-link showHand" onclick="window.location='/expenses'"
+        >Expense List</a
+      >
+      <!-- <a class="nav-item nav-link" [routerLink]="['/create-expense']">Add Expense</a> -->
+      <a class="nav-item nav-link showHand" onclick="window.location='/create-expense'"
+        >Add Expense</a
+      >
+      <!-- <a class="nav-item nav-link" [routerLink]="['/about']">About</a> -->
+      <a class="nav-item nav-link showHand" onclick="window.location='/about'">About</a>
     </div>
   </div>
 </nav>

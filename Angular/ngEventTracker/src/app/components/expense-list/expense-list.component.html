@@ -1,1 +1,161 @@
-<p>expense-list works!</p>
+<br />
+<!-- Display List -->
+<h1 *ngIf="!selectedExpense">List of Expenses</h1>
+<br />
+<div id="expenseList" *ngIf="!selectedExpense">
+  <table class="table table-striped table-hover">
+    <thead class="thead-light">
+      <tr>
+        <th>Id</th>
+        <th>Date</th>
+        <th>Name</th>
+        <th>Amount</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let expense of expenses">
+        <td>{{ expense.id }}</td>
+        <td>{{ expense.expenseDate | date: "shortDate" }}</td>
+        <td class="showHand" (click)="selectedExpense = expense">
+          {{ expense.paidToName }}
+        </td>
+        <td>{{ expense.expenseTotal }}</td>
+        <td align="right">
+          <button
+            class="btn btn-outline-danger"
+            (click)="deleteExpense(expense.id)"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Single Expense -->
+
+<div id="oneExense" *ngIf="selectedExpense && !updateExpense">
+  <h1>{{ selectedExpense.paidToName }}</h1>
+  <br />
+  <ul class="list-group">
+    <li class="list-group-item">
+      Expense Date: {{ selectedExpense.expenseDate | date: "shortDate" }}
+    </li>
+    <li class="list-group-item">
+      Expense Name: {{ selectedExpense.paidToName | uppercase }}
+    </li>
+    <li class="list-group-item">
+      Expense Type: {{ selectedExpense.expenseType }}
+    </li>
+    <li class="list-group-item">
+      Desctription: {{ selectedExpense.description }}
+    </li>
+    <li class="list-group-item">
+      Expense Number: {{ selectedExpense.workorderNumber }}
+    </li>
+    <li class="list-group-item">
+      Expense Amount: {{ selectedExpense.expenseTotal }}
+    </li>
+  </ul>
+  <br />
+  <div class="btn-group" role="group" aria-label="selected task">
+    <button class="btn btn-outline-success" (click)="selectedExpense = null">
+      Back
+    </button>
+    <button class="btn btn-outline-success" (click)="setUpdateExpense()">
+      Edit
+    </button>
+  </div>
+</div>
+
+<!-- Update Form -->
+
+<div *ngIf="updateExpense">
+  <div>
+    <h3 class="font-weight-light">Update Expense</h3>
+    <form class="card-body bg-light rounded">
+      <input
+        class="form-control"
+        type="date"
+        name="expenseDate"
+        placeholder="expense date"
+        required
+        #edate="ngModel"
+        [(ngModel)]="updateExpense.expenseDate"
+        required
+      />
+      <br />
+      <input
+        class="form-control"
+        type="text"
+        name="paidToName"
+        placeholder="expense paid to name (ex.Home Depot)"
+        required
+        #pname="ngModel"
+        [(ngModel)]="updateExpense.paidToName"
+        required
+      />
+      <br />
+      <input
+        class="form-control"
+        type="text"
+        name="expenseType"
+        placeholder="expense type/category"
+        [(ngModel)]="updateExpense.expenseType"
+        required
+      /><br />
+      <input
+        class="form-control"
+        type="text"
+        name="paymentType"
+        placeholder="payment type (ex.Cash or CC)"
+        [(ngModel)]="updateExpense.paymentType"
+        required
+      /><br />
+      <input
+        class="form-control"
+        type="number"
+        name="workorderNumber"
+        placeholder="work order or receipt number"
+        [(ngModel)]="updateExpense.workorderNumber"
+        required
+      />
+      <br />
+      <input
+        class="form-control"
+        type="text"
+        name="description"
+        placeholder="expense description"
+        [(ngModel)]="updateExpense.description"
+        required
+      />
+      <br />
+      <input
+        class="form-control"
+        type="number"
+        name="expenseTotal"
+        placeholder="expense total amount"
+        [(ngModel)]="updateExpense.expenseTotal"
+        required
+      /><br />
+      <button
+        type="submit"
+        class="btn btn-outline-primary"
+        name="update"
+        (click)="updatedExpense(updateExpense)"
+      >
+        Update
+      </button>
+      <!-- Load Home on cancel with pop up notification -->
+      <button
+        class="btn btn-outline-primary"
+        name="cancel"
+        onclick="window.location='/expenses'"
+      >
+        Cancel
+      </button>
+    </form>
+  </div>
+</div>

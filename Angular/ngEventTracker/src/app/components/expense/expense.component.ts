@@ -1,3 +1,4 @@
+import { Expense } from './../../models/expense';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -11,5 +12,9 @@ export class ExpenseComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  // displayExpense(selectedExpense: Expense) {
+  //   return this;
+  // }
 
 }

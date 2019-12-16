@@ -1,12 +1,16 @@
 <div>
-  <div>
-    <form class="card-body bg-light rounded" name="addExpenseForm">
-      <h3 class="font-weight-light">Add Expense</h3>
+  <div ng-form="myForm">
+    <br />
+    <h3 class="font-weight-light">Add Expense</h3>
+    <form class="card-body bg-light rounded" #createForm="ngForm">
       <input
         class="form-control"
         type="date"
         name="expenseDate"
         placeholder="expense date"
+        required #edate="ngModel"
+        [(ngModel)]="newExpense.expenseDate"
+        required
       />
       <br />
       <input
@@ -14,6 +18,9 @@
         type="text"
         name="paidToName"
         placeholder="expense paid to name (ex.Home Depot)"
+        required #pname="ngModel"
+        [(ngModel)]="newExpense.paidToName"
+        required
       />
       <br />
       <input
@@ -21,18 +28,24 @@
         type="text"
         name="expenseType"
         placeholder="expense type/category"
+        [(ngModel)]="newExpense.expenseType"
+        required
       /><br />
       <input
         class="form-control"
         type="text"
         name="paymentType"
         placeholder="payment type (ex.Cash or CC)"
+        [(ngModel)]="newExpense.paymentType"
+        required
       /><br />
       <input
         class="form-control"
         type="number"
         name="workorderNumber"
         placeholder="work order or receipt number"
+        [(ngModel)]="newExpense.workorderNumber"
+        required
       />
       <br />
       <input
@@ -40,6 +53,8 @@
         type="text"
         name="description"
         placeholder="expense description"
+        [(ngModel)]="newExpense.description"
+        required
       />
       <br />
       <input
@@ -47,13 +62,24 @@
         type="number"
         name="expenseTotal"
         placeholder="expense total amount"
+        [(ngModel)]="newExpense.expenseTotal"
+        required
       /><br />
       <button
+        type="submit"
         class="btn btn-outline-primary"
-        onclick="scrollOnClick()"
+        (click)="createExpense(createForm)"
         name="create"
       >
         Create
+      </button>
+      <!-- Load Home on cancel with pop up notification -->
+      <button
+        class="btn btn-outline-primary"
+        name="cancel"
+        onclick="window.location=''"
+      >
+        Cancel
       </button>
     </form>
   </div>

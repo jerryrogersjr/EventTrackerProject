@@ -1,14 +1,15 @@
+
 export class Expense {
-  private id: number;
-  private expenseDate: Date;
-  private paidToName: string;
-  private expenseType: string;
-  private paymentType: string;
-  private workorderNumber: number;
-  private description: string;
-  private expenseTotal: number;
-  private createdAt: Date;
-  private updatedAt: Date;
+  id: number;
+  expenseDate: Date;
+  paidToName: string;
+  expenseType: string;
+  paymentType: string;
+  workorderNumber: number;
+  description: string;
+  expenseTotal: number;
+  createdAt: Date;
+  updatedAt: Date;
 
   constructor( // Constructor needed if private for encapsulation.
 
