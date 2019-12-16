@@ -14,7 +14,7 @@ updated, or deleted.
 
 ### Follow On: Full CRUD with Angular implemented.
 
-![ExpenseTracker](ExpenseTracker/src/main/resources/public/images/ExpenseTracker.jpg)
+![ExpenseTracker](ExpenseTracker/src/main/resources/public/images/expenseTrackerAngular.jpg)
 
 
 ### Follow On: Full CRUD with Javascript XMLHttpRequest implemented.
