@@ -12,12 +12,12 @@
 Here, I chose a basic expense tracker. An expense can be created, read,
 updated, or deleted.
 
-### Follow On: Full CRUD with Angular implemented.
+### Follow On (phase 3): Full CRUD with Angular implemented.
 
 ![ExpenseTracker](ExpenseTracker/src/main/resources/public/images/expenseTrackerAngular.jpg)
 
 
-### Follow On: Full CRUD with Javascript XMLHttpRequest implemented.
+### Follow On (phase 2): Full CRUD with Javascript XMLHttpRequest implemented.
 
 ![Expense Tracker](ExpenseTracker/src/main/resources/public/images/demoView.jpg)
 <!-- ExpenseTracker/src/main/resources/public/images/demoView.jpg -->
