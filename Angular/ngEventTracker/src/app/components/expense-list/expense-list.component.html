@@ -21,7 +21,7 @@
         <td class="showHand" (click)="selectedExpense = expense">
           {{ expense.paidToName }}
         </td>
-        <td>{{ expense.expenseTotal }}</td>
+        <td>$ {{ expense.expenseTotal }}</td>
         <td align="right">
           <button
             class="btn btn-outline-danger"
@@ -57,7 +57,7 @@
       Expense Number: {{ selectedExpense.workorderNumber }}
     </li>
     <li class="list-group-item">
-      Expense Amount: {{ selectedExpense.expenseTotal }}
+      Expense Amount: $ {{ selectedExpense.expenseTotal }}
     </li>
   </ul>
   <br />
@@ -76,7 +76,7 @@
 <div class="container" *ngIf="updateExpense">
   <div>
     <h3 class="font-weight-light">Update Expense</h3>
-    <form class="card-body bg-light rounded">
+    <form class="card-body bg-light rounded" ngNativeValidate>
       <input
         class="form-control"
         type="date"
@@ -121,7 +121,6 @@
         name="workorderNumber"
         placeholder="work order or receipt number"
         [(ngModel)]="updateExpense.workorderNumber"
-        required
       />
       <br />
       <input
@@ -137,6 +136,7 @@
         class="form-control"
         type="number"
         name="expenseTotal"
+        ng-pattern="000000.00"
         placeholder="expense total amount"
         [(ngModel)]="updateExpense.expenseTotal"
         required

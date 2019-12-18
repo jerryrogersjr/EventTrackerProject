@@ -1,8 +1,13 @@
 <div class="container">
-  <div> <!-- ng-form="myForm" -->
+  <div>
+    <!-- ng-form="myForm" -->
     <br />
     <h3 class="font-weight-light">Add Expense</h3>
-    <form class="card-body bg-light rounded" #createForm="ngForm" >
+    <form
+      class="card-body bg-light rounded"
+      #createForm="ngForm"
+      ngNativeValidate
+    >
       <input
         class="form-control"
         type="date"
@@ -43,7 +48,7 @@
         name="workorderNumber"
         placeholder="work order or receipt number"
         [(ngModel)]="newExpense.workorderNumber"
-        required
+
       />
       <br />
       <input
@@ -58,6 +63,8 @@
       <input
         class="form-control"
         type="number"
+        step=".01"
+        ng-pattern="000000.00"
         name="expenseTotal"
         placeholder="expense total amount"
         [(ngModel)]="newExpense.expenseTotal"
